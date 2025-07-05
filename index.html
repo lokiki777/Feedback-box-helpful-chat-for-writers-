@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mildred's Feedback Box</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gradient-to-br from-purple-100 to-purple-200 min-h-screen font-sans p-6">
+    <div class="max-w-2xl mx-auto bg-white shadow-xl rounded-xl p-8 space-y-10">
+      <header class="text-center">
+        <h1 class="text-3xl font-bold text-purple-700">💌 Leave Feedback for Mildred</h1>
+        <p class="text-gray-600 mt-2">Your message is private. Only Mildred can read it.</p>
+      </header>
+
+      <!-- Private Feedback Form -->
+      <form action="https://formspree.io/f/xnnvyjaa" method="POST" class="space-y-4">
+        <textarea 
+          name="message" 
+          required 
+          placeholder="Write your anonymous message here..." 
+          class="w-full p-4 rounded-lg border border-purple-300 h-40 resize-none focus:outline-none focus:ring-2 focus:ring-purple-400"
+        ></textarea>
+
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="(Optional) Enter your email if you want a private reply" 
+          class="w-full p-3 rounded-lg border border-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-300"
+        />
+
+        <button 
+          type="submit" 
+          class="bg-purple-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-purple-700 transition"
+        >
+          Send Message ✉️
+        </button>
+      </form>
+
+      <!-- Divider -->
+      <hr class="border-purple-300 my-8" />
+
+      <!-- Public Thank You Wall -->
+      <section>
+        <h2 class="text-2xl font-bold text-purple-700 mb-2">🌟 Public Thank You Wall</h2>
+        <p class="text-gray-600 mb-4">
+          Want to leave some love or appreciation? Drop your comment here 💖
+        </p>
+
+        <!-- Disqus Embed -->
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </section>
+
+      <footer class="text-center text-sm text-gray-500 mt-10">
+        Built with 💜 by Mildred
+      </footer>
+    </div>
+
+    <!-- Disqus embed script -->
+    <script>
+      var disqus_config = function () {
+        this.page.url = window.location.href;  // Current page URL
+        this.page.identifier = window.location.pathname; // Page unique identifier
+      };
+
+      (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://renna-1.disqus-com.disqus.com/embed.js'; // Your Disqus shortname
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  </body>
+</html>
